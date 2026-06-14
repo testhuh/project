@@ -8,7 +8,7 @@
 - ✅ 멜론 플레이리스트 크롤링
 - ✅ 곡 정보 자동 추출 (곡명, 가수, 앨범)
 - ✅ 유튜브 검색 및 저장 가능성 확인
-- ✅ 최종 리스트 생성 (CSV, JSON)
+- ✅ 최종 리스트 생성 (CSV, MD, JSON)
 
 ---
 
@@ -23,8 +23,6 @@
 │   └─ 라이브러리 설치 및 실행 방법
 ├── 📄 melon_to_youtube_crawler.py
 │   └─ 메인 실행 스크립트 (Python)
-├── 📊 MVP_개발요건_Overview.pptx
-│   └─ Samsung AX 팀 발표 자료
 └── 📝 requirements.txt
     └─ 필수 라이브러리 목록
 
@@ -74,7 +72,6 @@ python melon_to_youtube_crawler.py
 | `melon_disney_ost_youtube_crawler_prompt.md` | 📄 마크다운 | 상세 작업 프롬프트 및 스크립트 코드 |
 | `설치및실행가이드.md` | 📄 마크다운 | 단계별 설치 및 실행 방법 |
 | `melon_to_youtube_crawler.py` | 🐍 Python | 메인 자동화 스크립트 |
-| `MVP_개발요건_Overview.pptx` | 📊 PPT | Samsung AX 팀 프레젠테이션 |
 
 ---
 
@@ -183,14 +180,6 @@ python melon_to_youtube_crawler.py
 ※ 곡 개수, 인터넷 속도, 서버 상태에 따라 변동
 
 ---
-
-## 🔒 보안 및 주의사항
-
-⚠️ **저작권 주의**
-- 개인 학습/수집 목적으로만 사용
-- 수집된 데이터 배포 금지
-- 멜론/유튜브 이용약관 준수
-
 ⚠️ **서버 부하 최소화**
 - 딜레이 설정으로 요청 간격 조절
 - 과도한 크롤링 금지
