@@ -264,8 +264,4 @@ python melon_to_youtube_crawler.py
 - 파일 입출력 (CSV, JSON)
 
 ---
-
-**작성자**: AI Assistant  
 **작성일**: 2026-06-14  
-**상태**: ✅ 완성  
-**버전**: 1.0
