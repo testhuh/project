@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>disney_ost_playlist 추가 결과</title>
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+    color: #4a3f6b;
+    padding: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #cfe7ff 0%, #dcd3ff 45%, #f4d4ff 100%);
+    background-attachment: fixed;
+  }
+
+  h1 {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 4px;
+    background: linear-gradient(90deg, #7a6cf6, #c66cf6, #6cb8f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  h1::before { content: "⭐ "; }
+  h1::after { content: " 🪄"; }
+
+  h2 { font-size: 17px; margin-top: 32px; color: #5d4fa3; }
+  h2::before { content: "✨ "; }
+
+  .meta { text-align: center; color: #7a6f9c; font-size: 13px; margin-bottom: 24px; }
+
+  /* 진행률 (반짝이는 progress bar) */
+  .progress-section { margin: 16px 0 28px; }
+  .progress-label {
+    display: flex; justify-content: space-between;
+    font-size: 13px; color: #5d4fa3; margin-bottom: 6px; font-weight: 600;
+  }
+  .progress-track {
+    height: 22px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.55);
+    box-shadow: inset 0 0 6px rgba(122,108,246,0.25);
+    overflow: hidden;
+    position: relative;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 78%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #a18cff, #ff9cf6, #8cd8ff, #a18cff);
+    background-size: 300% 100%;
+    animation: shimmer 3s linear infinite;
+    box-shadow: 0 0 12px rgba(255,156,246,0.6);
+  }
+  @keyframes shimmer {
+    0% { background-position: 0% 0; }
+    100% { background-position: 300% 0; }
+  }
+
+  /* 요약 카드 */
+  .summary { display: flex; gap: 14px; margin-bottom: 8px; }
+  .card {
+    flex: 1; padding: 16px; border-radius: 16px; text-align: center;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 14px rgba(122,108,246,0.18);
+  }
+  .card .num { font-size: 26px; font-weight: bold; color: #6a4fd6; }
+  .card .label { font-size: 12px; color: #7a6f9c; margin-top: 2px; }
+  .card.ok .num { color: #4fb88f; }
+  .card.fail .num { color: #e07ba0; }
+
+  /* 카드형 곡 리스트 */
+  .song-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+  }
+  .song-card {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 14px; border-radius: 12px;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(4px);
+    font-size: 13px; line-height: 1.4;
+    box-shadow: 0 2px 8px rgba(122,108,246,0.12);
+    border-left: 4px solid transparent;
+  }
+  .song-card.ok { border-left-color: #8de3c5; }
+  .song-card.fail { border-left-color: #f6a3c0; }
+  .song-card .icon { font-size: 16px; flex-shrink: 0; }
+  .song-card .title { color: #4a3f6b; }
+  .song-card .title-wrap { display: flex; flex-direction: column; gap: 3px; }
+  .song-card .reason { font-size: 11px; color: #c97aa0; }
+
+  .empty-msg { color: #a89bd6; font-size: 13px; padding: 8px 0; }
+
+  .preview { margin-top: 36px; }
+  .preview video { box-shadow: 0 6px 20px rgba(122,108,246,0.25); }
+</style>
+</head>
+<body>
+  <h1>"disney_ost_playlist" 재생목록 추가 결과</h1>
+  <div class="meta">실행 시각: 2026-06-14 14:46:29</div>
+
+  <div class="progress-section">
+    <div class="progress-label">
+      <span>진행률</span>
+      <span>14 / 18 (78%)</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill"></div>
+    </div>
+  </div>
+
+  <div class="summary">
+    <div class="card total"><div class="num">18</div><div class="label">전체</div></div>
+    <div class="card ok"><div class="num">14</div><div class="label">성공</div></div>
+    <div class="card fail"><div class="num">4</div><div class="label">실패</div></div>
+  </div>
+
+  <section class="ok-section">
+    <h2>성공한 곡</h2>
+    <div class="song-grid"><div class="song-card ok"><span class="icon">🪄</span><span class="title">Jessie J Part Of Your World From The Little Mermaid</span></div>
+<div class="song-card ok"><span class="icon">🪄</span><span class="title">Gregory Porter When You Wish Upon A Star Disney</span></div>
+<div class="song-card ok"><span class="icon">🪄</span><span class="title">Lofi Pixar Disney Lofi Steal The Show Lofi Ver</span></div>
+<div class="song-card ok"><span class="icon">🪄</span><span class="title">Sofia the First Main Title Theme Cast Disney Junior</span></div>
+<div class="song-card ok"><span class="icon">🪄</span><span class="title">Daveed Diggs Under the Sea The Little Mermaid Disney</span></div>
+<div class="song-card ok"><span class="icon">🪄</span><span class="title">Brad Kane Lea Salonga A Whole New World Remastered 2022</span></div>
+<div class="song-card ok"><span class="icon">🪄</span><span class="title">Lang Lang Royal Philharmonic Orchestra Remember Me Coco</span></div>
+<div class="song-card ok"><span class="icon">🪄</span><span class="title">Cliff Edwards Disney Studio Chorus When You Wish Upon a Star</span></div>
+<div class="song-card ok"><span class="icon">🪄</span><span class="title">Angela Lansbury Disney Beauty and the Beast</span></div>
+<div class="song-card ok"><span class="icon">🪄</span><span class="title">Royal Philharmonic Orchestra How Far I'll Go Moana</span></div>
+<div class="song-card ok"><span class="icon">🪄</span><span class="title">DCappella Love Is an Open Door Disney</span></div>
+<div class="song-card ok"><span class="icon">🪄</span><span class="title">Peabo Bryson Regina Belle A Whole New World</span></div>
+<div class="song-card ok"><span class="icon">🪄</span><span class="title">Samuel E Wright Disney Under the Sea Official</span></div>
+<div class="song-card ok"><span class="icon">🪄</span><span class="title">Royal Philharmonic Orchestra I See The Light Tangled</span></div></div>
+  </section>
+
+  <section class="fail-section">
+    <h2>실패한 곡 (수동 추가 필요)</h2>
+    <div class="song-grid"><div class="song-card fail"><span class="icon">💫</span><div class="title-wrap"><span class="title">Frozen 2 Karaoke Show Yourself Instrumental with Chorus</span><span class="reason">사유: 더보기 버튼 미응답 — YouTube Shorts·Music 형식이거나 저작권으로 저장 버튼이 비활성화됨</span></div></div>
+<div class="song-card fail"><span class="icon">💫</span><div class="title-wrap"><span class="title">Christina Aguilera Reflection Official Disney</span><span class="reason">사유: 저장 메뉴 항목 없음 — 저작권으로 인해 재생목록 저장이 차단되었을 가능성</span></div></div>
+<div class="song-card fail"><span class="icon">💫</span><div class="title-wrap"><span class="title">Sara Bareilles When You Wish Upon a Star Disney 100</span><span class="reason">사유: 검색 결과 클릭 실패 — 영상이 삭제·비공개 처리되었거나 네트워크 오류</span></div></div>
+<div class="song-card fail"><span class="icon">💫</span><div class="title-wrap"><span class="title">Naomi Scott Speechless Full Aladdin Official</span><span class="reason">사유: 저장 메뉴 항목 없음 — 저작권으로 인해 재생목록 저장이 차단되었을 가능성</span></div></div></div>
+  </section>
+
+  
+</body>
+</html>
